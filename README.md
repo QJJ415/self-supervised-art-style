@@ -1,6 +1,6 @@
 RUN
 
-python -u main_pretrain.py --dataset AVA  --m 0.99
+python -u main_pretrain.py --dataset AVA  --epochs 300
 
 TEST
 
