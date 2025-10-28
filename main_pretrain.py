@@ -472,8 +472,6 @@ def main_worker(local_rank, args, log):
     args.lr = args.lr * args.batch_size / 256
 
     log.info(str(model))
-    # print("s", student)
-    # print("t", teacher)
     # move networks to gpu
     student, teacher = student.cuda(args.local_rank), teacher.cuda(args.local_rank)
 
@@ -645,11 +643,7 @@ def main_worker(local_rank, args, log):
     train_transform = pretrain_transform(args.crop_min, local_crops_number=args.local_crops_number)
 
     train_dataset, val_dataset, _ = init_datasets(args, train_transform, train_transform)
-    # train_dataset = ImageFolder("D:/PytorchProject/datasets/AVA/train", transform=train_transform)
-    # test_dataset = ImageFolder("D:/PytorchProject/datasets/AVA/test", transform=train_transform)
-    # val_dataset = test_dataset
-    # image1, label = train_dataset[0]
-    # print(image1.shape)
+
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset, shuffle=True)
     else:
@@ -829,7 +823,7 @@ def train(student, teacher, teacher_without_ddp,   teachermid_loss,  train_loade
 
             contrastive_loss = model(images[0], images[1],targets, moco_m, epoch=epoch)
             teacher_mid_loss = teachermid_loss(images[0], images[1])
-            loss =0.5* contrastive_loss + 0.00005 * teacher_mid_loss
+            loss =0.5* contrastive_loss + 0.5 * teacher_mid_loss
         # print("2222")
         losses.update(0.00005 * teacher_mid_loss.item(), images[0].size(0))
         ce_losses.update(contrastive_loss.item(), images[0].size(0))
