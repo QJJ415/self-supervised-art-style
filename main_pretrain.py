@@ -33,8 +33,7 @@ from byol_pytorch import NetWrapper
 from models import vits
 from collections import OrderedDict
 from models.vision_transformer import DINOHead
-import self_utils
-from utils.utils import logger, sync_weights
+from utils.utils import logger, sync_weights,self_utils
 from utils.init_datasets import init_datasets
 from utils.pretrain import pretrain_transform
 import utils_mae.lr_decay as lrd
