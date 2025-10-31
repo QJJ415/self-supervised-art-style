@@ -19,7 +19,7 @@ Pandora18k, and Flickr—demonstrate that our method outperforms state-of-the-ar
 ![Image text](https://github.com/QJJ415/self-supervised-art-style/blob/cc7aa8f6d2880b8e0d7365aa95cac9c77be1be8e/images.png)
 Usage
 -------------
-Pretrain
+## Pretrain
 
 python -u main_pretrain.py --dataset AVA  --epochs 300
 
