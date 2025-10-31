@@ -20,9 +20,24 @@ Pandora18k, and Flickr—demonstrate that our method outperforms state-of-the-ar
 Usage
 -------------
 ## Pretrain
-
+```bash
 python -u main_pretrain.py --dataset AVA  --epochs 300
-
-TEST
-
+```
+## Fintune
+```bash
 python -u main_finetune_mae.py --dataset AVA --checkpoint bgt-AVA.pth --epochs 100
+```
+## Environment Setting
+```bash
+conda create -n art-style python=3.8 -y
+conda activate art-style
+
+# pytorch
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge -y
+
+# other
+python -m pip install tensorboard tensorboardX
+python -m pip install cyanure-mkl
+python -m pip install timm==0.4.9
+
+```
