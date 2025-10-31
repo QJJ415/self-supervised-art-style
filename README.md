@@ -16,7 +16,8 @@ learnable Gram matrix module for dynamic modeling of channel-wise correlations t
 enhance style encoding. Extensive experiments on three public datasets—AVA,
 Pandora18k, and Flickr—demonstrate that our method outperforms state-of-the-art.
 
-![](https://github.com/QJJ415/self-supervised-art-style)
+![](https://github.com/QJJ415/self-supervised-art-style/images.png)
+
 Usage
 -------------
 Pretrain
