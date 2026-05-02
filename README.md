@@ -25,7 +25,7 @@ python -u main_pretrain.py --dataset AVA  --epochs 300
 ```
 ## Fintune
 ```bash
-python -u main_finetune_mae.py --dataset AVA --checkpoint bgt-AVA.pth --epochs 100
+python -u main_finetune.py --dataset AVA --checkpoint bgt-AVA.pth --epochs 100
 ```
 ## Environment Setting
 ```bash
