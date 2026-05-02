@@ -1,4 +1,4 @@
-Applied Soft Computing Journal Self-Supervised Art Style Classification via Attention, Distillation, and Learnable Style
+Self-Supervised Art Style Classification via Attention, Distillation, and Learnable Style
 =================================================
 Introduction
 -----------------------
